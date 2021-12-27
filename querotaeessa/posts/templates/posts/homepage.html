@@ -9,7 +9,15 @@
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
 </head>
+
 <body>
-    <h1> Posts </h1>
+    <h1><a href="/"> Postagens </a></h1>
+        {% for post in posts %}
+            <article>
+                <time>published: {{ post.data_publicacao }}</time>
+                <h2><a href="">{{ post.titulo }}</a></h2>
+                <p>{{ post.texto|linebreaksbr }}</p>
+            </article>
+        {% endfor %}
 </body>
 </html>
